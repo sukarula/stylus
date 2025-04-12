@@ -1,0 +1,89 @@
+@-moz-document url-prefix("https://github.com") {
+/* code preview */
+.react-code-text {
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+}
+
+/* md preview */
+.entry-content {
+    font-size: 20px !important;
+    line-height: 1.6 !important;
+
+    /* 偶数行と奇数行で交互に背景色 */
+    ul > li:nth-child(odd) {
+        background-color: #1f1f1f;
+    }
+
+    ul > li:nth-child(even) {
+        background-color: #2f2f2f;
+    }
+}
+
+/* GitHubのReactコード表示ページで交互に背景色をつける */
+div[id^="LC"]:nth-child(odd) {
+    background-color: #1f1f1f;
+}
+
+div[id^="LC"]:nth-child(even) {
+    background-color: #2f2f2f;
+}
+
+.container-lg {
+    max-width: 2000px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+/* md edit */
+.cm-line {
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+
+    font-family: 'Fira Code', 'Courier New', monospace !important;
+    /* 偶数行と奇数行で交互に背景色 */
+}
+div[class*="cm-line"]:nth-of-type(odd) {
+    background-color: #1f1f1f;
+}
+
+div[class*="cm-line"]:nth-of-type(even) {
+    background-color: #2f2f2f;
+}
+
+
+/* GitHub コードビューで不要な外枠スクロールを抑える */
+body {
+    overflow-y: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100vh !important;
+}
+
+/* メインのコード表示領域をスクロール可能にする */
+main {
+    overflow-y: auto !important;
+    max-height: 100vh !important;
+}
+
+/* リポジトリのファイル一覧の上部バー（Add fileなど含む）を固定 */
+.repository-content .Box-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* 上に出す */
+    /* background-color: var(--bgColor-default, #ffffff); */
+    background-color: #2f2f2f;
+    /* 背景を設定して透け防止 */
+}
+
+/* リポジトリのファイル一覧の上部バー（Add fileなど含む）を固定(こっち正解？) */
+.Box-sc-g0xbh4-0.KMPzq {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* 上に出す */
+    background-color: var(--bgColor-default, #ffffff);
+    /* 背景を設定して透け防止 */
+}
+}
